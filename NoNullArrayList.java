@@ -16,4 +16,13 @@ public class NoNullArrayList<T> extends ArrayList<T>{
     else
     super.add(index,element);
   }
+  public T set(int index, T element){
+    if(element == null){
+      throw new NoSuchElementException("Can not add a null to a NoNullArrayList");
+    }
+    else
+    super.set(index,element);
+    return this.get(index);
+  }
+  
 }
